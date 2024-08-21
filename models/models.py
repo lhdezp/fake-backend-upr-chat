@@ -1,7 +1,7 @@
 
 from pydantic import BaseModel
 
-from typing import List
+from typing import List, Tuple
 
 class LLM(BaseModel):
     name: str
@@ -19,3 +19,11 @@ class CollectionJobs(BaseModel):
     sources: List[str]
     date: str
 
+class Chat(BaseModel):
+    name:str
+    chats: List[List[str]]
+
+class User(BaseModel):
+    username: str
+    password: str
+    chats: List[Chat]
